@@ -1,5 +1,7 @@
 name := "rxio"
 
+organization := "net.alanc"
+
 version := "0.0.1"
 
 scalaVersion := "2.11.7"
@@ -15,7 +17,7 @@ libraryDependencies ++= Seq(
 )
 
 pomExtra :=
-  <url>http://jsuereth.com/scala-arm</url>
+  <url>https://github.com/alancnet/rxio</url>
   <licenses>
     <license>
       <name>BSD-style</name>
@@ -24,13 +26,13 @@ pomExtra :=
     </license>
   </licenses>
   <scm>
-    <url>git@github.com:jsuereth/scala-arm.git</url>
-    <connection>scm:git:git@github.com:jsuereth/scala-arm.git</connection>
+    <url>git@github.com:alancnet/rxio.git</url>
+    <connection>scm:git:git@github.com:alancnet/rxio.git</connection>
   </scm>
   <developers>
     <developer>
-      <id>jsuereth</id>
-      <name>Josh Suereth</name>
-      <url>http://jsuereth.com</url>
+      <id>alancnet</id>
+      <name>Alan Colon</name>
+      <url>http://www.alanc.net</url>
     </developer>
   </developers>
