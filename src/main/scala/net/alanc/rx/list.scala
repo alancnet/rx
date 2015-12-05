@@ -1,4 +1,4 @@
-package net.alanc.rxio
+package net.alanc.rx
 
 import rx.lang.scala.subjects.ReplaySubject
 import rx.lang.scala.{Notification, Observer, Observable, Subject}
@@ -7,20 +7,20 @@ import scala.concurrent.Promise
 import scala.concurrent.duration.Duration
 import scala.reflect.ClassTag
 
-object ListComprehension {
+object list {
   // Pimp My Library: https://coderwall.com/p/k_1jzw/scala-s-pimp-my-library-pattern-example
-  implicit class PimpIterableAnyVal[T <: AnyVal](val list: Iterable[T]) extends AnyVal {
-    def splitBySlice(delimiter: Iterable[T]) = ListComprehension.splitBySlice(list, delimiter)
-    def split(delimiter: T) = ListComprehension.split(list, delimiter)
+  implicit class PimpIterableAnyVal[T <: AnyVal](val input: Iterable[T]) extends AnyVal {
+    def splitBySlice(delimiter: Iterable[T]) = list.splitBySlice(input, delimiter)
+    def split(delimiter: T) = list.split(input, delimiter)
   }
 
   implicit class PimpObservableAnyVal[T <: AnyVal](val input: Observable[T]) extends AnyVal {
-    def splitBySlice(delimiter: Iterable[T]) = ListComprehension.splitBySlice(input, delimiter)
-    def split(delimiter: T) = ListComprehension.split(input, delimiter)
+    def splitBySlice(delimiter: Iterable[T]) = list.splitBySlice(input, delimiter)
+    def split(delimiter: T) = list.split(input, delimiter)
   }
 
   implicit class PimpIterable[T](val input: Iterable[T]) extends AnyVal {
-    def pipe(output:Subject[T]) = ListComprehension.pipe(input, output)
+    def pipe(output:Subject[T]) = list.pipe(input, output)
     def doOnEach(action: T => Unit) = input.map(x => {
       action(x)
       x
@@ -31,8 +31,8 @@ object ListComprehension {
   }
 
   implicit class PimpObservable[T](val input: Observable[T]) extends AnyVal {
-    def pipe(output:Observer[T]) = ListComprehension.pipe(input, output)
-    def toQueue = ListComprehension.toQueue(input)
+    def pipe(output:Observer[T]) = list.pipe(input, output)
+    def toQueue = list.toQueue(input)
     def ofType[X](implicit tag: ClassTag[X]):Observable[X] = input.filter(x=>tag.runtimeClass == x.getClass).map(x=>x.asInstanceOf[X])
     def debug = input.doOnEach(x=>println(x))
     def debug(text:String) = input.doOnEach(x => println(text.replace("$0", x.toString)))

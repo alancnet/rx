@@ -1,4 +1,4 @@
-package net.alanc.rxio
+package net.alanc.rx
 
 import rx.exceptions.OnErrorFailedException
 import rx.lang.scala._

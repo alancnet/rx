@@ -1,7 +1,7 @@
-import net.alanc.rxio.FlushSubject
+import net.alanc.rx.FlushSubject
 import rx.lang.scala.Notification.{OnCompleted, OnNext}
 import rx.lang.scala.Subject
-import net.alanc.rxio.ListComprehension._
+import net.alanc.rx.list._
 import org.scalatest._
 
 import scala.concurrent.Promise

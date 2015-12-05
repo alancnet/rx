@@ -1,4 +1,4 @@
-package net.alanc.rxio
+package net.alanc.rx
 
 import java.util.concurrent.ThreadFactory
 
@@ -39,7 +39,7 @@ object ManagedActor {
       ConfigFactory.parseString(
         """
           akka {
-            loggers = ["com.athlinks.chronotrack.akka.ConsoleLogger"],
+            loggers = ["net.alanc.rxio.ConsoleLogger"],
             loglevel = "DEBUG"
           }
         """.stripMargin),

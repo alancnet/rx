@@ -1,11 +1,11 @@
-package net.alanc.rxio
+package net.alanc.rx
 
 import java.net.InetSocketAddress
 
 import akka.actor.{Actor, Props, ActorSystem, ActorRef}
 import akka.io.{IO, Udp}
 import akka.util.ByteString
-import net.alanc.rxio.RxUdp.Datagram
+import net.alanc.rx.RxUdp.Datagram
 import rx.lang.scala.schedulers.NewThreadScheduler
 import rx.lang.scala.{Observer, Subject, Observable}
 import rx.lang.scala.subjects.PublishSubject

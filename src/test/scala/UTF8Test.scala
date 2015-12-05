@@ -1,6 +1,6 @@
 import org.scalatest.{Matchers, FlatSpec}
 import rx.lang.scala.Observable
-import net.alanc.rxio.encoding._
+import net.alanc.rx.encoding._
 
 class UTF8Test extends FlatSpec with Matchers {
   val testString = "♈ ♉ ♊ ♋ ♌ ♍ ♎ ♏ ♐ ♑ ♒ ♓ "

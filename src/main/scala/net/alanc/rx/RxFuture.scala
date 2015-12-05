@@ -1,4 +1,4 @@
-package net.alanc.rxio
+package net.alanc.rx
 
 import rx.lang.scala.Notification.{OnCompleted, OnError, OnNext}
 import rx.lang.scala.Observable
@@ -8,6 +8,8 @@ import scala.concurrent.{Future, TimeoutException, CanAwait, Awaitable}
 import scala.concurrent.duration.Duration
 import scala.util.{Failure, Success, Try}
 
+import list._
+
 object RxFuture {
   def apply[T](input:Observable[T]) = new RxFuture(input)
   implicit def toObservable[T](rxFuture: RxFuture[T]):Observable[T] = rxFuture.observable
@@ -15,6 +17,8 @@ object RxFuture {
   implicit class RxFutureUnit(val future:RxFuture[Unit]) extends AnyVal {
     //def onSuccess(action: => Unit):Unit = future.onSuccess(_=>action)
   }
+  def successful[T](value:T) = Observable.from(value :: Nil).future
+  def failed(ex:Throwable) = Observable.error(ex).future
 }
 
 class RxFuture[T](input:Observable[T]) extends Awaitable[T] {

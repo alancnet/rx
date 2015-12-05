@@ -1,4 +1,4 @@
-name := "rxio"
+name := "rx"
 
 organization := "net.alanc"
 
@@ -17,7 +17,7 @@ libraryDependencies ++= Seq(
 )
 
 pomExtra :=
-  <url>https://github.com/alancnet/rxio</url>
+  <url>https://github.com/alancnet/rx</url>
   <licenses>
     <license>
       <name>BSD-style</name>
@@ -26,8 +26,8 @@ pomExtra :=
     </license>
   </licenses>
   <scm>
-    <url>git@github.com:alancnet/rxio.git</url>
-    <connection>scm:git:git@github.com:alancnet/rxio.git</connection>
+    <url>git@github.com:alancnet/rx.git</url>
+    <connection>scm:git:git@github.com:alancnet/rx.git</connection>
   </scm>
   <developers>
     <developer>

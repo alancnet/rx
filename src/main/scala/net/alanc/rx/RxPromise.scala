@@ -1,4 +1,4 @@
-package net.alanc.rxio
+package net.alanc.rx
 
 import rx.lang.scala.Observable
 import rx.lang.scala.subjects.ReplaySubject

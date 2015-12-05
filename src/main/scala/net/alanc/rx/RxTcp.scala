@@ -1,4 +1,4 @@
-package net.alanc.rxio
+package net.alanc.rx
 
 import java.net.InetSocketAddress
 import java.util.concurrent.atomic.AtomicInteger
@@ -6,13 +6,13 @@ import java.util.concurrent.atomic.AtomicInteger
 import akka.actor._
 import akka.io.{Tcp, IO}
 import akka.util.ByteString
-import net.alanc.rxio.RxTcp.TcpUnsubscribed
+import net.alanc.rx.RxTcp.TcpUnsubscribed
 import rx.lang.scala.{Subscription, Subject, Observable}
 import rx.lang.scala.subjects.PublishSubject
 
 import scala.collection.mutable
 import scala.concurrent.duration.Duration
-import ListComprehension._
+import list._
 
 object RxTcp {
   case class TcpUnsubscribed()

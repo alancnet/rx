@@ -1,4 +1,4 @@
-package net.alanc.rxio
+package net.alanc.rx
 import java.nio.CharBuffer
 import java.nio.charset.StandardCharsets
 

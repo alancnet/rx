@@ -1,10 +1,10 @@
-package net.alanc.rxio
+package net.alanc.rx
 
 import rx.lang.scala.subjects.ReplaySubject
 import rx.lang.scala.{Observer, Subscription, Observable, Subject}
 
 import encoding._
-import ListComprehension._
+import list._
 
 trait ProtocolMessage
 
